@@ -7,6 +7,8 @@ const cors = require('cors');
 const path = require('path');
 
 const apiRoutes = require('./routes/api.js');
+const fccTestingRoutes = require('./routes/fcctesting.js');
+const runner = require('./test-runner.js');
 
 const app = express();
 
@@ -20,6 +22,9 @@ app.route('/').get((req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+// FCC test result endpoint
+fccTestingRoutes(app);
+
 // Mount API routes
 apiRoutes(app);
 
@@ -31,6 +36,17 @@ app.use((req, res) => {
 const PORT = process.env.PORT || 3000;
 const listener = app.listen(PORT, () => {
   console.log('Your app is listening on port ' + listener.address().port);
+  if (process.env.NODE_ENV === 'test') {
+    console.log('Running Tests...');
+    setTimeout(() => {
+      try {
+        runner();
+      } catch (e) {
+        console.log('Tests are not valid:');
+        console.error(e);
+      }
+    }, 1500);
+  }
 });
 
 module.exports = app; // for testing
