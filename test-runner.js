@@ -4,7 +4,7 @@ const path = require('path');
 const testDir = 'tests';
 
 module.exports = function () {
-  const mocha = new Mocha();
+  const mocha = new Mocha({ ui: 'tdd' });
   const testFiles = ['1_unit-tests.js', '2_functional-tests.js'];
 
   testFiles.forEach((file) => {
