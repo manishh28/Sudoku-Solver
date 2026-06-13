@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sudoku Solver</title>
+  <link rel="stylesheet" href="/public/style.css" />
+</head>
+<body>
+  <main>
+    <h1>Sudoku Solver</h1>
+
+    <div class="container">
+      <div class="board-wrapper">
+        <div id="sudoku-grid" class="sudoku-grid"></div>
+
+        <div class="controls">
+          <button id="solve-button" type="button">Solve Puzzle</button>
+          <button id="clear-button" type="button">Clear</button>
+        </div>
+
+        <div class="error-msg" id="error-msg"></div>
+      </div>
+
+      <div class="text-area-wrapper">
+        <label for="text-input">Puzzle String</label>
+        <textarea id="text-input" rows="4"></textarea>
+
+        <div class="check-section">
+          <h3>Check a Placement</h3>
+          <label for="coordinate">Coordinate (e.g. A1)</label>
+          <input id="coordinate" type="text" maxlength="2" />
+
+          <label for="value">Value (1-9)</label>
+          <input id="value" type="text" maxlength="1" />
+
+          <button id="check-button" type="button">Check Placement</button>
+          <div class="check-result" id="check-result"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/public/client.js"></script>
+</body>
+</html>

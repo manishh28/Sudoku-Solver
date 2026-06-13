@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 2rem 1rem;
+  background: #1e2530;
+  color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  max-width: 900px;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.board-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sudoku-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 36px);
+  grid-template-rows: repeat(9, 36px);
+  border: 3px solid #f0f0f0;
+}
+
+.sudoku-grid input {
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  font-size: 1.1rem;
+  border: 1px solid #555;
+  background: #2c3645;
+  color: #f0f0f0;
+}
+
+.sudoku-grid input:focus {
+  outline: 2px solid #4caf50;
+}
+
+/* Thicker borders for 3x3 region boundaries */
+.sudoku-grid input.region-right {
+  border-right: 3px solid #f0f0f0;
+}
+.sudoku-grid input.region-bottom {
+  border-bottom: 3px solid #f0f0f0;
+}
+
+.controls {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  background: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #43a047;
+}
+
+.error-msg {
+  margin-top: 0.75rem;
+  min-height: 1.2rem;
+  color: #ff6b6b;
+  text-align: center;
+}
+
+.text-area-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 320px;
+  width: 100%;
+}
+
+textarea, input[type="text"] {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background: #2c3645;
+  color: #f0f0f0;
+  font-family: monospace;
+}
+
+.check-section {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.check-result {
+  margin-top: 0.5rem;
+  min-height: 1.2rem;
+}

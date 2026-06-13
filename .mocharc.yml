@@ -1,0 +1,3 @@
+spec: tests/*.js
+timeout: 10000
+ui: tdd
